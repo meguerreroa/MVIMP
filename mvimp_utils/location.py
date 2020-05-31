@@ -16,7 +16,8 @@ waifu2x_vulkan = os.path.join(LOC, "third_party/waifu2x-ncnn-vulkan")
 
 input_data_dir = os.path.join(LOC, "Data/Input")
 output_data_dir = os.path.join(LOC, "Data/Output")
-if not os.path.exists(input_data_dir):
-    os.makedirs(input_data_dir)
-if not os.path.exists(output_data_dir):
-    os.makedirs(output_data_dir)
+tmp_data_dir = os.path.join(LOC, "Data/Temp")
+all_dir_link = [input_data_dir, output_data_dir, tmp_data_dir]
+for dir_link in all_dir_link:
+    if not os.path.exists(dir_link):
+        os.makedirs(dir_link)

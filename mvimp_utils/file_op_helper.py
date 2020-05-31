@@ -22,3 +22,11 @@ def clean_folder(src: str) -> None:
     if os.path.exists(src):
         shutil.rmtree(src)
     os.makedirs(src)
+
+
+def file_type_check(src: str, _type: str) -> None:
+    file_list = os.listdir(src)
+    for file in file_list:
+        assert file.endswith(
+            "." + _type
+        ), f"{file} is non-{_type} file, check what's wrong plz."
