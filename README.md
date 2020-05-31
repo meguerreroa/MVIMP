@@ -16,7 +16,7 @@ I realize that training a good-performance AI model is kind of just one side of 
 |                          Model                         |  Input | Output |        Parallel        |                                                       Colab Link                                                      |
 |:------------------------------------------------------:|:------:|:------:|:----------------------:|:---------------------------------------------------------------------------------------------------------------------:|
 | [AnimeGAN](https://github.com/CyFeng16/MVIMP#animegan) | Images | Images |          True          |       [link](https://colab.research.google.com/github/CyFeng16/MVIMP/blob/master/docs/MVIMP_AnimeGAN_Demo.ipynb)      |
-|     [DAIN](https://github.com/CyFeng16/MVIMP#dain)     |  Video |  Video |          False         |         [link](https://colab.research.google.com/github/CyFeng16/MVIMP/blob/master/docs/MVIMP_DAIN_Demo.ipynb)        |
+|     [DAIN](https://github.com/CyFeng16/MVIMP#dain)     |  Videos |  Videos |          True         |         [link](https://colab.research.google.com/github/CyFeng16/MVIMP/blob/master/docs/MVIMP_DAIN_Demo.ipynb)        |
 | [DeOldify](https://github.com/CyFeng16/MVIMP#deoldify) | Images | Images |          True          |       [link](https://colab.research.google.com/github/CyFeng16/MVIMP/blob/master/docs/MVIMP_DeOldify_Demo.ipynb)      |
 |  [Photo3D](https://github.com/CyFeng16/MVIMP#photo3d)  | Images | Videos | True(not recommmended) |       [link](https://colab.research.google.com/github/CyFeng16/MVIMP/blob/master/docs/MVIMP_Photo3D_Demo.ipynb)       |
 |  [Waifu2x](https://github.com/CyFeng16/MVIMP#waifu2x)  | Images | Images |          True          | [link](https://colab.research.google.com/github/CyFeng16/MVIMP/blob/master/docs/MVIMP_Waifu2x-ncnn-Vulkan_Demo.ipynb) |
@@ -92,14 +92,13 @@ You can find out dependencies issue at #5  and #16 .
     python3 preparation.py -f dain
     # Step 2: Put a single video file into ./Data/Input/
     # Step 3: Infernece
-    python3 inference_dain.py -input your_input.mp4 -ts 0.5 -hr
+    python3 inference_dain.py -ts 0.5 -hr
     ```
 
 3. Description of Parameters
 
     | params            | abbr.  | Default    | Description                                                                                                                                 |
     |-------------------|--------|------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-    | --input_video     | -input | /          | The input video name.                                                                                                                       |
     | --time_step       | -ts    | 0.5        | Set the frame multiplier.<br>0.5 corresponds to 2X;<br>0.25 corresponds to 4X;<br>0.125 corresponds to 8X.                                  |
     | --high_resolution | -hr    | store_true | Default is False(action:store_true).<br>Turn it on when you handling FHD videos,<br>A frame-splitting process will reduce GPU memory usage. |
 
